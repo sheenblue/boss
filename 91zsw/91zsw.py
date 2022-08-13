@@ -6,7 +6,8 @@
 import requests
 from bs4 import BeautifulSoup
 import addtodb
-
+from pyquery import PyQuery as pq
+import re
 def html(url):
 
     #url = "http://trade.zz91.com/productdetails1683269.htm"
@@ -26,52 +27,67 @@ def html(url):
     response = requests.request("GET", url, headers=headers, data=payload)
 
     response.encoding = 'utf-8'
+
     soup = BeautifulSoup(response.text, 'lxml')
     return soup
 
 
 if __name__ == '__main__':
-    url = "http://trade.zz91.com/productdetails1842536.htm"
+    #url = "http://trade.zz91.com/productdetails1842536.htm"
+    #url = 'http://trade.zz91.com/productdetails1683269.htm'
+    url = 'http://trade.zz91.com/productdetails2097060.htm'
+
+    phone,contact,jyfw,cpm,sl,lx,xh ='','','','','','',''
+
+
     soup = html(url)
     #print(soup)
-    txt = soup.find_all(class_='ifm-con-p2 clearfix')
+    txt = soup.find(class_='ifm-con')
+    #txt = soup.find(class_='ifm-con-p2 clearfix')
+    # if txt == []:
+    #     txt = soup.find(class_='ifm-con-p clearfix')
+    #     print(txt)
+    #print(type(txt))
+    txt = txt.find_all(name='p')
+
     for i in range(len(txt)):
         txt4 = txt[i].find(name='span').string
         txt4 = txt4.strip()
+        #print(txt4)
         txt4 = str(txt4)
         if txt4 == '移动电话：':
-            txt5 = txt[i].find(class_='fl ifm-con-span-r').string
+            txt5 = txt[i].find_all(class_='fl')
+            #print(txt5[1])
+            txt5 = str(txt5[1])
+            patt = '\d{11}'
+            txt5 = re.findall(patt,txt5)
+            print('phone:',txt5)
+            phone = txt5
+        elif txt4 == '联 系 人：':
+            #print(123)
+            txt5 = txt[i].find_all(class_='fl')
+            txt5 = txt5[1].string
+            print('联系人：',txt5.strip())
+            contact = txt5.strip()
+        elif txt4 == '经营范围：' or txt4 == '范    围：':
+            #print(123)
+            txt5 = txt[i].find_all(class_='fl')
+            txt5 = txt5[1].string
+            print('经营范围：',txt5.strip())
+            jyfw = txt5.strip()
 
 
-   #  #联系人
-   #  txt2 = txt[0].find_all(class_='fl')
-   #  txt3 = txt2[1].string
-   #  print(txt3.strip())
-   #
-   #
-   #  #移动电话
-   #  txt2 = txt[1].find_all(class_='fl ifm-con-span-r')
-   #  #print(txt2)
-   #  txt3 = txt2[0].string
-   #  #print(txt3)
-   #  print(txt3.strip())
-   #
-   #  # 经营范围
-   #  txt2 = txt[5].find_all(class_='fl ifm-con-span-r')
-   #  # print(txt2)
-   #  txt3 = txt2[0].string
-   #  print(txt3.strip())
-   # # con = addtodb.sql_connection('91zsw')
-   #
-   #  # 产品名
-   #  txt1 = soup.find(class_='pro-box clearfix')
-   #  txt2 = txt1.find_all(class_='pro-tle')
-   #  #print(txt2)
-   #  txt3 = txt2[0].string
-   #  print(txt3.strip())
 
+    # 产品名
+    txt1 = soup.find(class_='pro-box clearfix')
+    txt2 = txt1.find_all(class_='pro-tle')
+    #print(txt2)
+    txt3 = txt2[0].string
+    print('产品名：',txt3.strip())
+    cpm = txt3.strip()
     #求购数量
     txt1 = txt1.find_all(class_='pro-js-main clearfix')
+
 
 
     txt2 = txt1[0].find_all(name='p')
@@ -88,7 +104,9 @@ if __name__ == '__main__':
             txt3 = txt3.replace('</p>', '')
             txt3 = txt3.replace('   ', '')
             #print(txt3)
-            print(''.join(txt3.split()))
+            t = ''.join(txt3.split())
+            print('现货所在地：', t)
+            xh = t
         elif txt3.string == '求购类型：' or txt3.string == '供应类型：':
             #print(txt2[i])
             txt3 = str(txt2[i])
@@ -98,7 +116,9 @@ if __name__ == '__main__':
             txt3 = txt3.replace('</p>', '')
             txt3 = txt3.replace('   ', '')
             #print(txt3)
-            print(''.join(txt3.split()))
+            t = ''.join(txt3.split())
+            print('求购类型：',t)
+            lx = t
         elif txt3.string == '求购数量：' or txt3.string == '供应数量：':
             # print(txt2[i])
             txt3 = str(txt2[i])
@@ -108,6 +128,8 @@ if __name__ == '__main__':
             txt3 = txt3.replace('</p>', '')
             txt3 = txt3.replace('   ', '')
             #print(txt3)
-            print(''.join(txt3.split()))
+            t = ''.join(txt3.split())
+            print('求购数量：',t)
+            sl = t
 
-
+    con = addtodb.sql_connection('91zsw')
