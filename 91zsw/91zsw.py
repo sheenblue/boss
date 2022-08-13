@@ -33,9 +33,11 @@ def html(url):
 
 
 if __name__ == '__main__':
-    url = "http://trade.zz91.com/productdetails1842536.htm"
+    #url = "http://trade.zz91.com/productdetails1842536.htm"
     #url = 'http://trade.zz91.com/productdetails1683269.htm'
     #url = 'http://trade.zz91.com/productdetails2097060.htm'
+    #url = 'http://trade.zz91.com/productdetails2036197.htm'
+    url = 'http://trade.zz91.com/productdetails1987986.htm'
 
     phone,contact,jyfw,cpm,sl,lx,xh ='','','','','','',''
 
