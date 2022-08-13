@@ -33,9 +33,9 @@ def html(url):
 
 
 if __name__ == '__main__':
-    #url = "http://trade.zz91.com/productdetails1842536.htm"
+    url = "http://trade.zz91.com/productdetails1842536.htm"
     #url = 'http://trade.zz91.com/productdetails1683269.htm'
-    url = 'http://trade.zz91.com/productdetails2097060.htm'
+    #url = 'http://trade.zz91.com/productdetails2097060.htm'
 
     phone,contact,jyfw,cpm,sl,lx,xh ='','','','','','',''
 
@@ -62,13 +62,15 @@ if __name__ == '__main__':
             patt = '\d{11}'
             txt5 = re.findall(patt,txt5)
             print('phone:',txt5)
-            phone = txt5
+            phone = txt5[0]
         elif txt4 == '联 系 人：':
             #print(123)
             txt5 = txt[i].find_all(class_='fl')
             txt5 = txt5[1].string
-            print('联系人：',txt5.strip())
+
             contact = txt5.strip()
+            contact = ''.join(contact.split())
+            print('联系人：', contact)
         elif txt4 == '经营范围：' or txt4 == '范    围：':
             #print(123)
             txt5 = txt[i].find_all(class_='fl')
@@ -133,3 +135,8 @@ if __name__ == '__main__':
             sl = t
 
     con = addtodb.sql_connection('91zsw')
+    t = '(NAMES TEXT, PHONES INT, JYFWS TEXT, CPMS TEXT, SLS TEXT, LXS TEXT, XHS TEXT)'
+    bname = 'zsw'
+    addtodb.create_table(con, bname, t)
+    value = (contact,phone,jyfw,cpm,sl,lx,xh)
+    addtodb.sql_insert(con, bname, value)

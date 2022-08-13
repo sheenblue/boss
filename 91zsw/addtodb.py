@@ -27,11 +27,11 @@ def sql_connection(name):
         print(Error)
 
 def create_table(con,name,sql):
-    classname = name
 
     try:
+        #sql1 = 'CREATE TABLE IF NOT EXISTS 91zsw1 {1}'.format(name,sql)
+        con.execute(f'CREATE TABLE IF NOT EXISTS {name}{sql} ')
 
-        con.execute(f'CREATE TABLE IF NOT EXISTS classname{sql}')
     except Exception as r:
         print(r)
         print("Create table failed")
@@ -104,8 +104,8 @@ def sql_fetchjj(con,name,value): #value 是 字段
 
 
 if __name__ == '__main__':
-    con = sql_connection('re_user_db')
-    # t = ('NAME TEXT','URL TEXT','CLASS TEXT')
+    con = sql_connection('91zsw')
+    # t = '(NAMES TEXT, PHONES INT, JYFWS TEXT, CPMS TEXT, SLS TEXT, LXS TEXT, XHS TEXT)'
     # #t = '(name text, salary real, department text)'
     # name = 'classname'
     # create_table(con,name,t)
@@ -117,8 +117,11 @@ if __name__ == '__main__':
     #     pass
 
     #测试能否导出所有数据
-    name = 'user'
-    value = 'usermail,password'
-    t = sql_fetchjj(con,name,value)
-    print(t)
-    print(t[0][0])
+    # name = 'user'
+    # value = 'usermail,password'
+    # t = sql_fetchjj(con,name,value)
+    # print(t)
+    # print(t[0][0])
+    t = ('NAMES TEXT', 'PHONES INT', 'JYFWS TEXT', 'CPMS TEXT', 'SLS TEXT', 'LXS TEXT', 'XHS TEXT')
+    bname = '91zsw1'
+    create_table(con,bname,t)
