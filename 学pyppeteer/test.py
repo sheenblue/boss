@@ -29,13 +29,7 @@ async def main():
     name = idget.getid()
     #生成密码
 
-    #数据传入数据库
-    con = addtodb.sql_connection('reids')
-    t = '(EMAIL TEXT, NAME INT, PASSWORD TEXT)'
-    bname = 'reids'
-    addtodb.create_table(con,bname,t)
-    value = (email,name,name)
-    addtodb.sql_insert(con,bname,value)
+
     #输入邮箱 #email
     await page.type('#email', email)
     #输入账号 #username
@@ -50,43 +44,49 @@ async def main():
         'clickCount': 1,
         'delay': 300,
     })
-
+    # 数据传入数据库
+    con = addtodb.sql_connection('reids')
+    t = '(EMAIL TEXT, NAME INT, PASSWORD TEXT)'
+    bname = 'reids'
+    addtodb.create_table(con, bname, t)
+    value = (email, name, name)
+    addtodb.sql_insert(con, bname, value)
     await asyncio.sleep(2)
     #打开投票链接
     #http://club.roamedit.com/club/?thread-2733.htm
 
-    #await page.goto('http://club.roamedit.com/club/?thread-2733.htm')
-    await page.goto('http://club.roamedit.com/club/?thread-2737.htm')
+    await page.goto('http://club.roamedit.com/club/?thread-2733.htm')
+    #await page.goto('http://club.roamedit.com/club/?thread-2737.htm')
 
     ##body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-body.pb-0 > div.w-100 > div:nth-child(8) > label > input
     #勾选内容
-    n1 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-body.pb-0 > div.w-100 > div:nth-child(8) > label > input'
+    n1 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-body.pb-0 > div.w-100 > div:nth-child(7) > label > input'
     n2 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-body.pb-0 > div.w-100 > div:nth-child(10) > label > input'
-    n3 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-body.pb-0 > div.w-100 > div:nth-child(3) > label > input'
+    n3 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-body.pb-0 > div.w-100 > div:nth-child(9) > label > input'
     n4 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-body.pb-0 > div.w-100 > div:nth-child(2) > label > input'
-    # await page.click(n1,options={
-    #     'button': 'left',
-    #     'clickCount': 1,
-    #     'delay': 300,
-    # })
-    # await page.click(n2, options={
-    #     'button': 'left',
-    #     'clickCount': 1,
-    #     'delay': 300,
-    # })
-    # await page.click(n3, options={
-    #     'button': 'left',
-    #     'clickCount': 1,
-    #     'delay': 300,
-    # })
-    await page.click(n4, options={
+    await page.click(n1,options={
         'button': 'left',
         'clickCount': 1,
         'delay': 300,
     })
+    await page.click(n2, options={
+        'button': 'left',
+        'clickCount': 1,
+        'delay': 300,
+    })
+    await page.click(n3, options={
+        'button': 'left',
+        'clickCount': 1,
+        'delay': 300,
+    })
+    # await page.click(n4, options={
+    #     'button': 'left',
+    #     'clickCount': 1,
+    #     'delay': 300,
+    # })
     #点击投票
-    #a1 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-footer.bg-light > a'
-    a1 = '.btn.btn-danger.px-5.vote-post-btn'
+    a1 = '#body > div > div > div.col-lg-9.main > div:nth-child(3) > div.card-footer.bg-light > a'
+    #a1 = '.btn.btn-danger.px-5.vote-post-btn'
     await page.click(a1, options={
         'button': 'left',
         'clickCount': 1,
