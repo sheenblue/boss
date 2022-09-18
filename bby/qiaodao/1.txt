@@ -1,0 +1,16 @@
+curl 'https://www.52pojie.cn/thread-805784-1-2.html' \
+  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'Accept-Language: zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6,ru;q=0.5' \
+  -H 'Cache-Control: max-age=0' \
+  -H 'Connection: keep-alive' \
+  -H 'Cookie: htVC_2132_connect_is_bind=1; htVC_2132_smile=1D1; KF4=ak1UnU; htVC_2132_saltkey=mjTGLgu5; htVC_2132_lastvisit=1661603325; htVC_2132_auth=bcdbI5HeyUnpQ1eRFOtIpnNHRuyZ5W1Z8eliDaCg%2FnbYWBYfCuBH39%2B9FdO5S%2FP%2FAyv%2FQ%2BavV2OxwUT31i%2FnysTYXjc; htVC_2132_atarget=1; htVC_2132_sid=0; htVC_2132_forum_lastvisit=D_8_1662858442; htVC_2132_visitedfid=16D8D24D2D4; htVC_2132_noticonf=947121D1D3_3_1; htVC_2132_st_p=947121%7C1662946772%7C3f8cac6394ee69fe0ba4dc5684413feb; htVC_2132_viewid=tid_805784; htVC_2132_ulastactivity=1662946772%7C0; htVC_2132_lastcheckfeed=947121%7C1662946772; Hm_lvt_46d556462595ed05e05f009cdafff31a=1662288883,1662819268,1662858182,1662946777; Hm_lpvt_46d556462595ed05e05f009cdafff31a=1662946777; htVC_2132_lastact=1662982542%09plugin.php%09' \
+  -H 'Sec-Fetch-Dest: document' \
+  -H 'Sec-Fetch-Mode: navigate' \
+  -H 'Sec-Fetch-Site: none' \
+  -H 'Sec-Fetch-User: ?1' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  --compressed

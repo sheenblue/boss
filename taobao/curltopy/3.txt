@@ -1,0 +1,20 @@
+curl 'https://cart.taobao.com/cart.htm?spm=a21bo.jianhua.1997525049.1.5af911d9zfCd7Q&from=mini&pm_id=1501036000a02c5c3739' \
+  -H 'authority: cart.taobao.com' \
+  -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'accept-language: zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6,ru;q=0.5' \
+  -H 'cache-control: max-age=0' \
+  -H 'cookie: enc=TUwKZ%2B%2BHexwaSrnt0FBJwbe3k4dZDpW26XGWHMMRvTODaGnD1a8VgnCWaguYX0JxlABJ7sQxQIP3UOTBdhr%2B7U7ITLS%2BuZfSCH5iuU7y39agqdQ3B8w%2FCK66%2F5mVvbD4; t=94e7deedd2770a6a96490084a5acfb49; thw=cn; ubn=p; cna=VcUYG4oeBXYCAXjqIvLC7CmU; lgc=tb0521019308; tracknick=tb0521019308; ucn=center; cookie2=14aa7ff7135f52fb50c3a9bc649e0c76; _tb_token_=ebadb317a7e5e; _m_h5_tk=3eacb128a08f56aa9c0c5bdc90c8397c_1662262896281; _m_h5_tk_enc=8c97c825e95cda7cf6e272520de6508c; _samesite_flag_=true; xlly_s=1; sgcookie=E100vpu6KlMJbzwyw2Cgf9%2FoHs7rnrZBYAovHVC89Uhr4epBtxIWth1zNdnIP4Cg%2BZ2LKDO5mgM60ZxIsbml6jOEVdX%2Bdgo2FcxGqaNvvLf8aDM%3D; unb=2206864184650; uc3=nk2=F5RFhSntHtd3%2Bmwz&id2=UUphzOrMFle5V1isAg%3D%3D&lg2=VT5L2FSpMGV7TQ%3D%3D&vt3=F8dCv4fTCcYHmyePyzE%3D; csg=328dc424; cancelledSubSites=empty; cookie17=UUphzOrMFle5V1isAg%3D%3D; dnk=tb0521019308; skt=075a041979724297; existShop=MTY2MjI1NTM1NA%3D%3D; uc4=nk4=0%40FY4O7FQ%2BDXCdFXAD1Bfdai21s20HI2s%3D&id4=0%40U2grF8GEQ9%2B%2BCrmuO1Uu86NRpmN1coUi; _cc_=VFC%2FuZ9ajQ%3D%3D; _l_g_=Ug%3D%3D; sg=805; _nk_=tb0521019308; cookie1=UNk0wiSN2OjaJLbvsCou9R5j3Ds9XG%2BTkIYBj74UCF8%3D; mt=ci=1_1; uc1=cookie14=UoeyDHAnjh69pA%3D%3D&cookie21=V32FPkk%2FhodrpstKNxZRcg%3D%3D&existShop=false&cookie15=W5iHLLyFOGW7aA%3D%3D&cart_m=0&cookie16=URm48syIJ1yk0MX2J7mAAEhTuw%3D%3D&pas=0; l=eB_VjpiRTggtce2SBO5wlurza77tPIRf1sPzaNbMiInca1PFtFt9TNCEeY69Sdtjgt5E2etP0_WjjdnkumzLRdGjL77lt-OH2Cv6Je1..; isg=BJSUQECui1OrFB-Ha9317tSdZdIG7bjXJTUyEy51iZ-jGTdjVvpQZ46TGRGB4fAv; tfstk=cznNBe63_hKa_1ofCkrqYqRZeyUOaHmmbHP3SQHQAkiH9sUgasD5MJV_BvlGLs4G.' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+
+
+
+
+  -H 'sec-fetch-dest: document' \
+  -H 'sec-fetch-mode: navigate' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'sec-fetch-user: ?1' \
+  -H 'upgrade-insecure-requests: 1' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36' \
+  --compressed

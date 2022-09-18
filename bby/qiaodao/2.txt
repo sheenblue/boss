@@ -1,0 +1,16 @@
+curl 'https://www.pcbeta.com/' \
+  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'Accept-Language: zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6,ru;q=0.5' \
+  -H 'Cache-Control: max-age=0' \
+  -H 'Connection: keep-alive' \
+  -H 'Cookie: jqCP_887f_smile=5D1; jqCP_887f_saltkey=CsJOHaWZ; jqCP_887f_lastvisit=1661583083; jqCP_887f_taskdoing_4857192=1; jqCP_887f_auth=dc255p7%2F%2BMKsMpaYCcWwCxQCyqjvFactThWMBeXuXFtSLWRsEGXx22inHypCbp2YKi9JJg%2BseRfbRsF0doQUQ0RGmO14; jqCP_887f_sid=YrOPTh; jqCP_887f_uuid=4857192; jqCP_887f_mrd=%09; jqCP_887f_ulastactivity=6a2dnuG0JVfsJ4XhpdZVU%2Fc3qrTPXfqKG59ned2TXcdJm%2FoKD1YA; jqCP_887f_checkpm=1; jqCP_887f_lastact=1662821902%09home.php%09misc; jqCP_887f_sendmail=1; Hm_lvt_76c941eab16e9b48cd0fb4a6d9482a4f=1661586684,1662821903; Hm_lpvt_76c941eab16e9b48cd0fb4a6d9482a4f=1662821903' \
+  -H 'Sec-Fetch-Dest: document' \
+  -H 'Sec-Fetch-Mode: navigate' \
+  -H 'Sec-Fetch-Site: none' \
+  -H 'Sec-Fetch-User: ?1' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  --compressed

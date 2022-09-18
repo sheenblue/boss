@@ -1,0 +1,17 @@
+curl 'https://www.iamtxt.com/' \
+  -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
+  -H 'Accept-Language: zh-CN,zh-TW;q=0.9,zh;q=0.8,en-US;q=0.7,en;q=0.6,ru;q=0.5' \
+  -H 'Cache-Control: max-age=0' \
+  -H 'Connection: keep-alive' \
+  -H 'Cookie: Hm_lvt_f4ed6be84f004238df9c881b5ec26c29=1662822066; PHPSESSID=qda4c86i9qiv4pg3euh9thd496; Hm_lpvt_f4ed6be84f004238df9c881b5ec26c29=1662822068; gzepvmlusername=%E9%98%BF%E8%B7%AF%E5%8A%A0; gzepvmluserid=264313; gzepvmlgroupid=7; gzepvmlrnd=VTw44IEwBilZD38Iqq0i; gzepvmlauth=d803a0f1ee9d89c373eac0d73332d180' \
+  -H 'Referer: https://graph.qq.com/' \
+  -H 'Sec-Fetch-Dest: document' \
+  -H 'Sec-Fetch-Mode: navigate' \
+  -H 'Sec-Fetch-Site: cross-site' \
+  -H 'Sec-Fetch-User: ?1' \
+  -H 'Upgrade-Insecure-Requests: 1' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  --compressed
